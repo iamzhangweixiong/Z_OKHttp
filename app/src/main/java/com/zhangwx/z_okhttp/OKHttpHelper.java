@@ -13,7 +13,19 @@ import okhttp3.Response;
 
 public class OKHttpHelper {
 
+    public interface OnResponse{
+
+    }
+
+
     public String get() {
+
+        BackgroundThread.post(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url("http://www.baidu.com").build();
         try {
